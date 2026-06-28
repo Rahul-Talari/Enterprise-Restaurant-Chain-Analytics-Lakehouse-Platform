@@ -24,6 +24,27 @@ display(df.limit(1))
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC ## `fact_order_items`
+# MAGIC
+# MAGIC **Grain:** One record per menu item within an order.
+# MAGIC
+# MAGIC | Column | Data Type | Description |
+# MAGIC |--------|-----------|-------------|
+# MAGIC | `order_id` | STRING | Identifier of the order. |
+# MAGIC | `order_timestamp` | TIMESTAMP | Timestamp when the order was placed. |
+# MAGIC | `order_date` | DATE | Date on which the order was placed. |
+# MAGIC | `restaurant_id` | STRING | Identifier of the restaurant fulfilling the order. |
+# MAGIC | `item_id` | STRING | Identifier of the ordered menu item. |
+# MAGIC | `item_name` | STRING | Name of the menu item. |
+# MAGIC | `category` | STRING | Category of the menu item (e.g., Starter, Main Course, Dessert, Beverage). |
+# MAGIC | `quantity` | INT | Quantity of the menu item ordered. |
+# MAGIC | `unit_price` | DECIMAL(10,2) | Price of a single unit of the menu item. |
+# MAGIC | `subtotal` | DECIMAL(10,2) | Total amount for the menu item (`quantity × unit_price`). |
+# MAGIC
+
+# COMMAND ----------
+
 # DBTITLE 1,Cell 2
 '''
 order_id STRING,

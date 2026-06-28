@@ -4,6 +4,29 @@
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC ## `fact_orders`
+# MAGIC
+# MAGIC **Grain:** One record per customer order.
+# MAGIC
+# MAGIC | Column | Data Type | Description |
+# MAGIC |--------|-----------|-------------|
+# MAGIC | `order_id` | STRING | Unique identifier for each order. **Primary Key** |
+# MAGIC | `order_timestamp` | TIMESTAMP | Timestamp when the order was placed. |
+# MAGIC | `order_date` | DATE | Date on which the order was placed. |
+# MAGIC | `order_hour` | INT | Hour of the day (0–23) when the order was placed. |
+# MAGIC | `day_of_week` | STRING | Day of the week on which the order was placed. |
+# MAGIC | `is_weekend` | BOOLEAN | Indicates whether the order was placed on a weekend. |
+# MAGIC | `restaurant_id` | STRING | Identifier of the restaurant fulfilling the order. |
+# MAGIC | `customer_id` | STRING | Identifier of the customer who placed the order. |
+# MAGIC | `order_type` | STRING | Order type (Delivery, Takeaway, or Dine-in). |
+# MAGIC | `item_count` | INT | Total number of menu items in the order. |
+# MAGIC | `total_amount` | DECIMAL(10,2) | Total order value. |
+# MAGIC | `payment_method` | STRING | Payment method used by the customer. |
+# MAGIC | `order_status` | STRING | Current status of the order (e.g., Pending, Preparing, Delivered, Cancelled). |
+
+# COMMAND ----------
+
 '''
 Lakeflow Declarative Pipeline Logic
     - bronze.historical_orders    : Initial historical load from the source database. Subsequent pipeline runs process only new or changed records.
